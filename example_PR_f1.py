@@ -1,6 +1,6 @@
 import torch
 
-# Example data for predicted and true boxes as PyTorch tensors
+# Example Tensor data for predicted and true boxes as PyTorch tensors
 predicted_boxes = torch.tensor([
     [236.9800, 142.5100, 261.6800, 212.0100],
     [7.0300, 167.7600, 156.3500, 262.6300],
@@ -77,9 +77,10 @@ def calculate_precision_recall_f1(predicted_boxes, true_boxes, iou_threshold):
 
     return precisions, recalls, f1_scores
 
-# Calculate precision, recall, and F1 score per image
-precisions, recalls, f1_scores = calculate_precision_recall_f1(predicted_boxes, true_boxes, iou_threshold)
 
+
+#Driver function example for calculating precision, recall, and F1 score per image
+precisions, recalls, f1_scores = calculate_precision_recall_f1(predicted_boxes, true_boxes, iou_threshold)
 # Now, you have precision, recall, and F1 score values per image
 for i in range(len(precisions)):
     print(f"Image {i + 1} - Precision: {precisions[i]:.2f}, Recall: {recalls[i]:.2f}, F1 Score: {f1_scores[i]:.2f}")
